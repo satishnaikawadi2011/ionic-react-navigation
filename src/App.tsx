@@ -26,12 +26,14 @@ import CourseSections from './pages/CourseSections';
 const App: React.FC = () => (
 	<IonApp>
 		<IonReactRouter>
-			<Route path="/" exact>
-				<Courses />
-			</Route>
-			<Route path="/course-sections">
-				<CourseSections />
-			</Route>
+			<IonRouterOutlet>
+				<Route path="/" exact>
+					<Courses />
+				</Route>
+				<Route path="/course-sections">
+					<CourseSections />
+				</Route>
+			</IonRouterOutlet>
 		</IonReactRouter>
 	</IonApp>
 );

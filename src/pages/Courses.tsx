@@ -1,9 +1,9 @@
-import { IonButton, IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/react';
+import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import React from 'react';
 
 const Courses: React.FC = () => {
 	return (
-		<React.Fragment>
+		<IonPage>
 			<IonHeader>
 				<IonToolbar>
 					<IonTitle>Courses</IonTitle>
@@ -15,7 +15,7 @@ const Courses: React.FC = () => {
 					<IonButton routerLink="/course-sections">To Course Sections Page</IonButton>
 				</div>
 			</IonContent>
-		</React.Fragment>
+		</IonPage>
 	);
 };
 
