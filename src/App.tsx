@@ -1,5 +1,5 @@
 import { Redirect, Route } from 'react-router-dom';
-import { IonApp, IonRouterOutlet } from '@ionic/react';
+import { IonApp, IonIcon, IonLabel, IonRouterOutlet, IonTab, IonTabBar, IonTabButton, IonTabs } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 
 /* Core CSS required for Ionic components to work properly */
@@ -22,18 +22,36 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 import Courses from './pages/Courses';
 import CourseSections from './pages/CourseSections';
+import { list, trophyOutline } from 'ionicons/icons';
+import AllSections from './pages/AllSections';
 
 const App: React.FC = () => (
 	<IonApp>
 		<IonReactRouter>
-			<IonRouterOutlet>
-				<Route path="/" exact>
-					<Courses />
-				</Route>
-				<Route path="/course-sections">
-					<CourseSections />
-				</Route>
-			</IonRouterOutlet>
+			<IonTabs>
+				<IonRouterOutlet>
+					<Route path="/courses" exact>
+						<Courses />
+					</Route>
+					<Route path="/course-sections">
+						<CourseSections />
+					</Route>
+					<Route path="/all-sections" exact>
+						<AllSections />
+					</Route>
+					<Redirect to="/courses" />
+				</IonRouterOutlet>
+				<IonTabBar slot="bottom">
+					<IonTabButton tab="all-sections" href="/all-sections">
+						<IonIcon icon={list} />
+						<IonLabel>All Sections</IonLabel>
+					</IonTabButton>
+					<IonTabButton tab="courses" href="/courses">
+						<IonIcon icon={trophyOutline} />
+						<IonLabel>Courses</IonLabel>
+					</IonTabButton>
+				</IonTabBar>
+			</IonTabs>
 		</IonReactRouter>
 	</IonApp>
 );
