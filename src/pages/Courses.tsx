@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/react';
+import { IonButton, IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/react';
 import React from 'react';
 
 const Courses: React.FC = () => {
@@ -11,6 +11,9 @@ const Courses: React.FC = () => {
 			</IonHeader>
 			<IonContent>
 				<h2>Welcome to courses page !!!</h2>
+				<div>
+					<IonButton routerLink="/course-sections">To Course Sections Page</IonButton>
+				</div>
 			</IonContent>
 		</React.Fragment>
 	);
