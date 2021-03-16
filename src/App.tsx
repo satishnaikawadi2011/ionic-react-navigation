@@ -20,10 +20,15 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import Courses from './pages/Courses';
 
 const App: React.FC = () => (
 	<IonApp>
-		<h1>My App</h1>
+		<IonReactRouter>
+			<Route path="">
+				<Courses />
+			</Route>
+		</IonReactRouter>
 	</IonApp>
 );
 
