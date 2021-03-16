@@ -41,7 +41,9 @@ const Courses: React.FC = () => {
 									<IonCard>
 										<IonCardContent className="ion-text-center">
 											<h2>{course.title}</h2>
-											<IonButton>view Course Sections</IonButton>
+											<IonButton routerLink={`/courses/${course.id}/course-sections`}>
+												View Course Sections
+											</IonButton>
 										</IonCardContent>
 									</IonCard>
 								</IonCol>
