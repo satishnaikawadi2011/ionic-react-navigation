@@ -20,6 +20,7 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import './theme/theme.css';
 import Courses from './pages/Courses';
 import CourseSections from './pages/CourseSections';
 import { list, trophyOutline } from 'ionicons/icons';
