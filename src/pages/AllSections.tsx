@@ -1,4 +1,13 @@
-import { IonBackButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import {
+	IonBackButton,
+	IonButtons,
+	IonContent,
+	IonHeader,
+	IonMenuButton,
+	IonPage,
+	IonTitle,
+	IonToolbar
+} from '@ionic/react';
 import React from 'react';
 
 const AllSections: React.FC = () => {
@@ -6,6 +15,9 @@ const AllSections: React.FC = () => {
 		<IonPage>
 			<IonHeader>
 				<IonToolbar>
+					<IonButtons slot="start">
+						<IonMenuButton />
+					</IonButtons>
 					<IonTitle>All Sections</IonTitle>
 				</IonToolbar>
 			</IonHeader>
