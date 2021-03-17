@@ -10,7 +10,6 @@ import {
 	IonMenu,
 	IonMenuToggle,
 	IonRouterOutlet,
-	IonTab,
 	IonTabBar,
 	IonTabButton,
 	IonTabs,
@@ -43,6 +42,7 @@ import CourseSections from './pages/CourseSections';
 import { list, options, trophyOutline } from 'ionicons/icons';
 import AllSections from './pages/AllSections';
 import Filter from './pages/Filter';
+import CourseTabs from './pages/CourseTabs';
 
 const App: React.FC = () => (
 	<IonApp>
@@ -56,7 +56,7 @@ const App: React.FC = () => (
 				<IonContent>
 					<IonList>
 						<IonMenuToggle>
-							<IonItem button routerLink="/all-sections" routerDirection="none">
+							<IonItem button routerLink="/courses/all-sections" routerDirection="none">
 								<IonIcon slot="start" icon={list} />
 								<IonLabel>All Sections</IonLabel>
 							</IonItem>
@@ -70,33 +70,15 @@ const App: React.FC = () => (
 					</IonList>
 				</IonContent>
 			</IonMenu>
-			<IonTabs>
-				<IonRouterOutlet id="main">
-					<Route path="/filter" exact>
-						<Filter />
-					</Route>
-					<Route path="/courses" exact>
-						<Courses />
-					</Route>
-					<Route path="/courses/:courseId/course-sections">
-						<CourseSections />
-					</Route>
-					<Route path="/all-sections" exact>
-						<AllSections />
-					</Route>
-					<Redirect to="/courses" />
-				</IonRouterOutlet>
-				<IonTabBar slot="bottom">
-					<IonTabButton tab="all-sections" href="/all-sections">
-						<IonIcon icon={list} />
-						<IonLabel>All Sections</IonLabel>
-					</IonTabButton>
-					<IonTabButton tab="courses" href="/courses">
-						<IonIcon icon={trophyOutline} />
-						<IonLabel>Courses</IonLabel>
-					</IonTabButton>
-				</IonTabBar>
-			</IonTabs>
+			<IonRouterOutlet id="main">
+				<Route path="/filter">
+					<Filter />
+				</Route>
+				<Route path="/courses">
+					<CourseTabs />
+				</Route>
+				<Redirect path="/" to="/courses/list" exact />
+			</IonRouterOutlet>
 		</IonReactRouter>
 	</IonApp>
 );
